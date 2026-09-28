@@ -1,0 +1,479 @@
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  background: #f7f8fa;
+  color: #20242c;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 232px;
+  min-height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e6e8ec;
+  padding: 32px 20px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand {
+  padding: 0 12px;
+  margin-bottom: 42px;
+}
+
+.brand h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #1f2937;
+}
+
+.brand p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #8a919c;
+}
+
+/* Navegación */
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: #69717d;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #f4f6f8;
+  color: #20242c;
+}
+
+.nav-item.active {
+  background: #eef4ff;
+  color: #315f9e;
+  font-weight: 600;
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b4bac3;
+}
+
+.nav-item.active .nav-dot {
+  background: #4f76aa;
+}
+
+/* Ayuda */
+
+.help-card {
+  background: #f5f7fa;
+  border-radius: 10px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.help-card strong {
+  font-size: 13px;
+}
+
+.help-card span {
+  font-size: 12px;
+  color: #7b8490;
+}
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+.main-content {
+  flex: 1;
+  padding: 38px 48px 50px;
+  max-width: 1208px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header p {
+  margin: 7px 0 0;
+  font-size: 14px;
+  color: #7b8490;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.notifications {
+  border: 1px solid #e1e4e8;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #535c68;
+  cursor: pointer;
+}
+
+.notifications:hover {
+  background: #f7f8fa;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #d9e4f4;
+}
+
+/* =========================
+   TARJETAS DE RESUMEN
+========================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 38px;
+}
+
+.stat-card {
+  min-height: 130px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #858d98;
+}
+
+.stat-card strong {
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.stat-card p,
+.stat-card a {
+  margin: 0;
+  font-size: 13px;
+  color: #737c88;
+}
+
+.stat-card a {
+  text-decoration: none;
+  color: #456d9f;
+}
+
+/* =========================
+   TAREAS
+========================= */
+
+.tasks-section {
+  margin-bottom: 36px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.section-header h2,
+.info-card h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.section-header a {
+  font-size: 13px;
+  color: #56759c;
+  text-decoration: none;
+}
+
+.task-card {
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+
+  min-height: 82px;
+  padding: 17px 20px;
+  margin-bottom: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 100px;
+  align-items: center;
+  gap: 24px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Tarea vencida */
+
+.task-card.overdue {
+  border-color: #c75b5b;
+}
+
+.task-card.overdue:hover {
+  border-color: #ad4545;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(173, 69, 69, 0.08);
+}
+
+/* Tarea todavía vigente */
+
+.task-card.on-time {
+  border-color: #72b58a;
+}
+
+.task-card.on-time:hover {
+  border-color: #579d70;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(87, 157, 112, 0.08);
+}
+
+.task-card h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.task-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #858d98;
+}
+
+/* =========================
+   ESTADOS
+========================= */
+
+.status {
+  padding: 6px 9px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+/* Vencida */
+
+.status-overdue {
+  background: #fbecec;
+  color: #a33d3d;
+}
+
+/* Todavía a tiempo */
+
+.status-on-time {
+  background: #edf7f0;
+  color: #3f8056;
+}
+
+.task-link {
+  text-align: right;
+  text-decoration: none;
+  color: #4e6f97;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* =========================
+   CONTENIDO SECUNDARIO
+========================= */
+
+.secondary-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.info-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.info-card h2 {
+  margin-bottom: 18px;
+}
+
+.evaluation,
+.notice {
+  padding: 14px 0;
+  border-top: 1px solid #edf0f2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.evaluation:first-of-type,
+.notice:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.evaluation strong,
+.notice strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.evaluation span,
+.notice span {
+  font-size: 12px;
+  color: #858d98;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 190px;
+  }
+
+  .main-content {
+    padding: 30px 25px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .brand {
+    margin-bottom: 18px;
+  }
+
+  .nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    white-space: nowrap;
+  }
+
+  .help-card {
+    display: none;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 24px 18px;
+  }
+
+  .header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .header-actions {
+    display: none;
+  }
+
+  .header h1 {
+    font-size: 23px;
+  }
+
+  .stats {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .stat-card {
+    min-height: 110px;
+  }
+
+  .task-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .task-link {
+    text-align: left;
+  }
+
+  .status {
+    width: fit-content;
+  }
+
+  .secondary-content {
+    grid-template-columns: 1fr;
+  }
+}
